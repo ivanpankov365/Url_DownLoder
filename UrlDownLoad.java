@@ -39,54 +39,58 @@ public class UrlDownLoad {
 		return FileName;
 	}
 	
-	public void setUrl() {
+	public void setUrl(String[] args) {
 	    
-	    while(true)
-	    {    
-	      out.println(
-		"Enter URL-address ('quit' to exit): ");
+	   // while(true)
+	    //{    
+	     out.println("Enter URL-address ('quit' to exit): ");
 		
-	      Scanner in = new Scanner(System.in);
-		  UrlName = in.nextLine(); 
-		  if(UrlName.equals("quit"))
-				break;
+	     // Scanner in = new Scanner(System.in);
+		///  UrlName = in.nextLine(); 
+		 // if(UrlName.equals("quit"))
+			//	break;
 		  
 		  // Set FileName
-		  int index = UrlName.lastIndexOf('/');
+		  int index = args[0].lastIndexOf('/');//UrlName.lastIndexOf('/');
 			
 			if(index == -1) {
 				FileName = "index.html";
 			}
 			else {
-				int index1 = UrlName.indexOf('?',index);
+				//int index1 = UrlName.indexOf('?',index);
+				int index1 = args[0].indexOf('?',index);
 				if(index1 == -1) {
-					FileName = UrlName.substring(index+1);
+					//FileName = UrlName.substring(index+1);
+					FileName = args[0].substring(index+1);
 				}
 				else {
-					FileName = UrlName.substring(index+1,index1);
+					//FileName = UrlName.substring(index+1,index1);
+					FileName = args[0].substring(index+1,index1);
 				}
 			}
 			
 			//-------------------
 	      
 	      // Set SiteName
-			int index0 = UrlName.indexOf('/',8);
+			//int index0 = UrlName.indexOf('/',8);
+			int index0 = args[0].indexOf('/',8);
 			
-	      SiteName = UrlName.substring(0, index0);
+	      //SiteName = UrlName.substring(0, index0);
+			SiteName = args[0].substring(0, index0);
 	      
 	      // Set Url
 	      try
 	      {
-	    	  Url = new URL(UrlName);
+	    	  Url = new URL(args[0]);
 	    	  
 	      }
 	      catch(MalformedURLException ex)
 	      {
 	        out.println(ex.toString());
-		continue;
+		//continue;
 	      }
 	      
-	    }  
+	  //  }  
 		
 	}
 
@@ -132,7 +136,6 @@ public class UrlDownLoad {
 			
 		}
 		
-			
 	        
 	}
 	

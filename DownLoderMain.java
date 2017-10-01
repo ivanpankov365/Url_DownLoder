@@ -8,13 +8,13 @@ public class DownLoderMain {
 			String name, URL;
 			
 			UrlDownLoad d = new UrlDownLoad();
-			
-			d.setUrl();
+			System.out.println(args);
+			//d.setUrl(args);
 			//System.out.println(d.getUrl());
-			System.out.println(d.getFileName());
+			//System.out.println(d.getFileName());
 			//System.out.println(d.getSiteName());
 			
-			d.openUrl();
+			//d.openUrl();
 			
 		}
 }
